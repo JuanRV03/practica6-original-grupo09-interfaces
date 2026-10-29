@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Inicio</title>
+<link rel="stylesheet" href="estilos-biblioteca.css">
+</head>
+<body>
+<div class="wrap">
+
+<div class="bar">
+  <div class="bl">Gobierno · Ciudadanía · Cultura · Trámites · Otros temas</div>
+  <div class="br"><span class="tam" onclick="zoom(1)">A+</span> <span class="tam" onclick="zoom(-1)">A-</span></div>
+</div>
+
+<div class="cab">
+  <div class="lg"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cmVjdCB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHJ4PSIxMCIgZmlsbD0iIzJkNmE0ZiIvPjxwYXRoIGQ9Ik0xMiAxNGgxNGE0IDQgMCAwIDEgNCA0djI4YTQgNCAwIDAgMC00LTRIMTJ6TTQ4IDE0SDM0YTQgNCAwIDAgMC00IDR2MjhhNCA0IDAgMCAxIDQtNGgxNHoiIGZpbGw9IiNkOGYzZGMiLz48L3N2Zz4=" width="60" height="60"><div><div class="lt">Red de Bibliotecas</div><div class="ls">Tierra Llana</div></div></div>
+  <div class="bus"><input type="text" placeholder="Buscar en el sitio"><div class="bb"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></div></div>
+  <div class="acc"><div class="ai" onclick="alert('Acceso usuarios')"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div class="ai" onclick="alert('Contacto')"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div></div>
+</div>
+
+<div class="menu">
+  <div class="mi" onclick="ir('inicio')">Red de Bibliotecas</div>
+  <div class="mi">Información
+    <div class="sm"><div>Quiénes somos</div><div>Tarjeta de usuario</div><div>Políticas de préstamo</div><div>App Biblio</div></div></div>
+  <div class="mi">Bibliotecas
+    <div class="sm"><div>Mapa de bibliotecas</div><div>Datos estadísticos</div><div>Directorio</div><div>Buscador de bibliobuses</div></div></div>
+  <div class="mi">Servicios
+    <div class="sm"><div>Libros electrónicos</div><div>Cine en línea</div><div>Biblioteca digital</div><div>Club de lectura</div></div></div>
+  <div class="mi">Acciones y proyectos
+    <div class="sm"><div>Noticias</div><div>Agenda cultural</div><div>Agenda 2030</div></div></div>
+  <div class="mi" onclick="ir('catalogo')">Catálogos</div>
+</div>
+
+<div class="mn" id="inicio">
+  <div class="h1">Red de Bibliotecas Tierra Llana</div>
+  <div class="slider"><div class="slide" style="display:block"><img src="https://picsum.photos/seed/online/1060/260"><div class="cap">Accede a nuestros servicios en línea</div></div><div class="slide" style="display:none"><img src="https://picsum.photos/seed/festival/1060/260"><div class="cap">Festival de lectura en voz alta</div></div><div class="slide" style="display:none"><img src="https://picsum.photos/seed/encuesta/1060/260"><div class="cap">Encuesta sobre las bibliotecas públicas</div></div><div class="slide" style="display:none"><img src="https://picsum.photos/seed/mapa/1060/260"><div class="cap">Mapa de bibliotecas de la región</div></div><div class="dots"><span onclick="ver(0)"></span><span onclick="ver(1)"></span><span onclick="ver(2)"></span><span onclick="ver(3)"></span></div></div>
+
+  <div class="h2">Destacados</div>
+  <div class="rowd"><div class="dcard"><img src="https://picsum.photos/seed/d-app/160/110"><div class="dt">Nueva app para tu móvil</div></div><div class="dcard"><img src="https://picsum.photos/seed/d-ebook/160/110"><div class="dt">Libros electrónicos</div></div><div class="dcard"><img src="https://picsum.photos/seed/d-cine/160/110"><div class="dt">Películas en streaming</div></div><div class="dcard"><img src="https://picsum.photos/seed/d-musica/160/110"><div class="dt">Música en streaming</div></div><div class="dcard"><img src="https://picsum.photos/seed/d-pregunte/160/110"><div class="dt">Pregunte, las bibliotecas responden</div></div><div class="dcard"><img src="https://picsum.photos/seed/d-club/160/110"><div class="dt">Club de lectura virtual</div></div></div>
+
+  <div class="h2">Bibliotecas públicas</div>
+  <div class="fl">Mostrar zona:
+    <select onchange="filtra(this.selectedIndex)"><option>Todas</option><option>Norte</option><option>Centro</option><option>Sur</option></select>
+  </div>
+  <div class="rowb" id="bibs"><div class="bib" data-z="norte"><img src="https://picsum.photos/seed/b-Villaverde/120/100"><div class="bt">Biblioteca de Villaverde</div></div><div class="bib" data-z="norte"><img src="https://picsum.photos/seed/b-Montearroyo/120/100"><div class="bt">Biblioteca de Montearroyo</div></div><div class="bib" data-z="norte"><img src="https://picsum.photos/seed/b-Santa Lucía/120/100"><div class="bt">Biblioteca de Santa Lucía</div></div><div class="bib" data-z="centro"><img src="https://picsum.photos/seed/b-Riobello/120/100"><div class="bt">Biblioteca de Riobello</div></div><div class="bib" data-z="centro"><img src="https://picsum.photos/seed/b-Torrealta/120/100"><div class="bt">Biblioteca de Torrealta</div></div><div class="bib" data-z="centro"><img src="https://picsum.photos/seed/b-Valdecampo/120/100"><div class="bt">Biblioteca de Valdecampo</div></div><div class="bib" data-z="sur"><img src="https://picsum.photos/seed/b-Puentevieja/120/100"><div class="bt">Biblioteca de Puentevieja</div></div><div class="bib" data-z="sur"><img src="https://picsum.photos/seed/b-Alcornoques/120/100"><div class="bt">Biblioteca de Alcornoques</div></div><div class="bib" data-z="sur"><img src="https://picsum.photos/seed/b-Peñanegra/120/100"><div class="bt">Biblioteca de Peñanegra</div></div></div>
+
+  <div class="h2">Recomendamos</div>
+  <div class="rowr"><div class="rcard"><img src="https://picsum.photos/seed/rec1/257/141"><div class="rt">Club de lectura virtual</div></div><div class="rcard"><img src="https://picsum.photos/seed/rec2/257/141"><div class="rt">Biblioteca digital</div></div><div class="rcard"><img src="https://picsum.photos/seed/rec3/257/141"><div class="rt">Tarjeta de usuario</div></div><div class="rcard"><img src="https://picsum.photos/seed/rec4/257/141"><div class="rt">Datos abiertos</div></div></div>
+
+  <div class="h2">Servicios principales</div>
+  <div class="rows">
+    <div class="sv" onclick="alert('Libros')"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4zM20 4h-7"/><path d="M20 4v14h-6"/></svg><span>Libros electrónicos</span></div>
+    <div class="sv" onclick="alert('Cine')"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M16 4v16M3 9h5M3 15h5M16 9h5M16 15h5"/></svg><span>Cine en línea</span></div>
+    <div class="sv" onclick="alert('Mapa')"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.500-7 12-7 12z"/><circle cx="12" cy="9" r="2.500"/></svg><span>Buscador de bibliobuses</span></div>
+    <div class="sv" onclick="alert('Agenda')"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Agenda cultural</span></div>
+  </div>
+
+  <div class="h2">Otros enlaces de interés</div>
+  <p class="enl"><a href="#">Archivo literario</a> · <a href="#">Catálogo colectivo</a> · <a href="#">Español para extranjeros</a> · <a href="#">Ministerio de Cultura</a> · <a href="#">Más información</a></p>
+
+  <div class="h2" id="catalogo">Catálogo de la Red</div>
+  <div class="cat">
+    <input type="text" id="q" placeholder="Introducir términos de búsqueda">
+    <div class="go" onclick="catalogo()">Buscar</div>
+    <div class="err" id="msg"></div>
+    <p>Para ver los resultados avanzados pulsa el icono de la derecha del buscador.</p>
+  </div>
+
+  <div class="h2">Mapa web</div>
+  <div class="acord" onclick="acordeon(this)">Información +</div>
+  <div class="cont" style="display:none"><p>Quiénes somos · Tarjeta de usuario · Políticas de préstamo · App Biblio</p></div>
+  <div class="acord" onclick="acordeon(this)">Bibliotecas +</div>
+  <div class="cont" style="display:none"><p>Directorio · Buscador · Bibliobuses · Datos estadísticos</p></div>
+  <div class="acord" onclick="acordeon(this)">Servicios +</div>
+  <div class="cont" style="display:none"><p>Libros electrónicos · Cine · Biblioteca digital · Club de lectura</p></div>
+</div>
+
+<div class="pie">
+  <span>Aviso legal</span> · <span>Protección de datos</span> · <span>Política de cookies</span> · <span>Accesibilidad</span> · <span>Contacto</span>
+  <div class="cp">© 2026 Red de Bibliotecas Tierra Llana · Plaza Mayor 1</div>
+</div>
+
+<div class="ck" id="ck">Usamos cookies para mejorar tu experiencia. <span class="ok" onclick="document.getElementById('ck').style.display='none'">Aceptar</span></div>
+<div class="top" id="top" onclick="window.scrollTo(0,0)">↑</div>
+</div>
+<script>
+var cur=0;
+function ver(n){
+  var s=document.getElementsByClassName('slide');
+  for(var i=0;i<s.length;i++)s[i].style.display=i==n?'block':'none';
+  cur=n;
+}
+setInterval(function(){ver((cur+1)%4);},3500);
+function filtra(op){
+  var z=['','norte','centro','sur'][op];
+  var b=document.getElementById('bibs').children;
+  for(var i=0;i<b.length;i++)b[i].style.display=(!z||b[i].getAttribute('data-z')==z)?'block':'none';
+}
+function catalogo(){
+  var q=document.getElementById('q');
+  if(!q.value){q.style.border='2px solid red';document.getElementById('msg').innerHTML='Error';}
+  else{q.style.border='1px solid #ccc';document.getElementById('msg').innerHTML='Buscando '+q.value+'...';}
+}
+function acordeon(el){
+  var c=el.nextElementSibling;
+  c.style.display=c.style.display=='none'?'block':'none';
+}
+var fz=13;
+function zoom(d){fz+=d;document.body.style.fontSize=fz+'px';}
+setTimeout(function(){document.getElementById('ck').style.display='block';},2000);
+window.onscroll=function(){document.getElementById('top').style.display=window.scrollY>400?'block':'none';};
+function ir(id){document.getElementById(id).scrollIntoView();}
+</script>
+</body>
+</html>
